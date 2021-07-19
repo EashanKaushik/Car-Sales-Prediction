@@ -1,5 +1,5 @@
 from flask import render_template, request, Flask, url_for
-from app.utils import make_prediction
+from deploy.utils import make_prediction
 
 GENDER = {'male': 1, 'female': 0}
 

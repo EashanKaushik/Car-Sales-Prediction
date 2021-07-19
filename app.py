@@ -1,5 +1,5 @@
 from flask import Flask, url_for
-from app import views
+from deploy import views
 
 app = Flask(__name__)
 
