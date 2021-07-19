@@ -1,13 +1,11 @@
 from flask import Flask, url_for
 from app import views
 
-import warnings
-
 app = Flask(__name__)
 
-app.add_url_rule('/predict', 'predict', views.predict)
+app.add_url_rule('/predict', 'predict', views.predict, methods=['GET','POST'])
 
-for __name__ == '__main__':
+app.add_url_rule('/home', 'home', views.home)
 
-	warnings.filterwarnings("ignore", category=DeprecationWarning)
-    app,run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

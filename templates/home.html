@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block bodyblock %}
+<!-- Main -->
+<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+    <div class="content">
+        <h1>Client Car Purchase Budget Prediction</h1>
+        <p class="major">
+            This software will help you predict the budget of your client given parameters like <b>Gender, Age, Net Worth, Annual Salary, Credit Card Dept</b>. You will be able to selectively show cars that lie in the predicted budget of the client, thus providing a better client experience.
+        </p>
+        <ul class="actions stacked">
+            <li><a href="{{ url_for('predict') }}" class="button big wide smooth-scroll-middle">Get Started Now!!</a></li>
+        </ul>
+    </div>
+    
+    <div class="image">
+        <img src="{{ url_for('static',filename='images/home.jpg') }}" alt="{{ url_for('static',filename='images/alt.jpg') }}" />
+    </div>
+</section>
+{% endblock  %}

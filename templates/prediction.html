@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{%block bodyblock %}
+<!-- Main -->
+<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+    <div class="image">
+        <img src="{{ url_for('static',filename='images/predict.jpg') }}" alt="{{ url_for('static',filename='images/alt.jpg') }}" />
+    </div>
+    <div class="content">
+        <h1>Client Details</h1>
+        
+
+        <section class="wrapper style1 align-center">
+            <div class="inner medium">
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <div class="fields">
+                        <div class="field half">
+                            <input type="text" name="gender" id="gender" placeholder="Gender: Male/ Female" required/>
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="age" id="age" placeholder="Age" />
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="annual" id="annual" placeholder="Annual Salary" required />
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="credit" id="credit" placeholder="Credit Card Dept" required/>
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="net" id="net" placeholder="Net Worth" required/>
+                        </div>
+                        
+                    </div>
+                    <ul class="actions special">
+                        <li><input type="submit" name="submit" id="submit" value="Predict"/></li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+        {% if prediction_made %}
+
+        <h2> Expected Client Budget: ${{ result[0][0] }} </h2>
+    
+        {% endif %}
+    </div>
+
+</section>
+{% endblock  %}
